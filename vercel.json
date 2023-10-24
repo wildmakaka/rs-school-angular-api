@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/api/index.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["response.json"]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "apps/api/index.js"
+    }
+  ]
+}
